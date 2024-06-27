@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Greeting Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="card">
+        <h1>Happy Birthday!</h1>
+        <p class="message">Wishing you a fantastic day filled with joy and laughter!</p>
+        <div class="image-container">
+            <img src="images/birthdaycake.avif" alt="Birthday-cake" id="greetingImage">
+        </div>
+        <button onclick="changeMessageAndImage()">Click for a surprise!</button>
+    </div>
+    <script>
+        const greetings = [
+            {
+                message: "May your day be as bright as your smile!",
+                image: "https://i0.wp.com/theroarbots.com/wp-content/uploads/2014/04/robot-Copy.jpg?ssl=1"
+            },
+            {
+                message: "Here's to another year of amazing adventures!",
+                image: "https://www.greengold.tv/assets/og/arjun.jpg"
+            },
+            {
+                message: "You're not getting older, you're getting more awesome!",
+                image: "https://cdn-icons-png.flaticon.com/512/4359/4359776.png"
+            },
+            {
+                message: "Cake, candles, and wonderful wishes coming your way!",
+                image: "https://media1.tenor.com/m/yFTXf00VVN8AAAAC/my-bday-is-in-2-days.gif"
+            }
+        ];
+
+        function changeMessageAndImage() {
+            const randomIndex = Math.floor(Math.random() * greetings.length);
+            const greeting = greetings[randomIndex];
+            document.querySelector('.message').textContent = greeting.message;
+            document.getElementById('greetingImage').src = greeting.image;
+            document.getElementById('greetingImage').alt = greeting.message;
+
+            
+        }
+
+        
+        
+    </script>
+</body>
+</html>
